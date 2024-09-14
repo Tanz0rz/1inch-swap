@@ -34,6 +34,7 @@ async function getEthFromWhale() {
 
     // Define the amount of WETH to send ("1" equates to 1 WETH)
     const amount = ethers.parseEther("1");
+    console.log(`Transferring ${ethers.formatUnits(amount)} WETH to local wallet (${localWallet})`);
 
     try {
         // Execute the transfer from the WETH whale to local wallet
@@ -41,7 +42,7 @@ async function getEthFromWhale() {
         console.log("Transaction sent, waiting for confirmation...");
         // Wait for the transaction to complete
         await tx.wait();
-        console.log(`Successfully transferred WETH to ${localWallet}`);
+        console.log(`Successfully transferred ${ethers.formatUnits(amount)} WETH to ${localWallet}`);
 
         // Check and print the balance of WETH whale
         wethBalance = await WETH.balanceOf(impersonatedSigner.address);
@@ -63,13 +64,13 @@ async function approveWethFor1inchRouter() {
     const amount = ethers.parseEther("1000");
 
     try {
-        console.log(`Approving ${amount.toString()} WETH for contract ${ONEINCH_V6_ADDRESS}`);
+        console.log(`Approving ${ethers.formatUnits(amount)} WETH for contract ${ONEINCH_V6_ADDRESS}`);
         // Execute the approval for the 1inch router
         const tx = await wethContractSignable.approve(ONEINCH_V6_ADDRESS, amount);
         console.log("Transaction sent, waiting for confirmation...");
         // Wait for the transaction to complete
         await tx.wait();
-        console.log(`Successfully approved 1000 WETH to ${ONEINCH_V6_ADDRESS}`);
+        console.log(`Successfully approved ${ethers.formatUnits(amount)} WETH to ${ONEINCH_V6_ADDRESS}`);
     } catch (error) {
         console.error("Error during WETH approval:", error);
     }

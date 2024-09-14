@@ -1,13 +1,14 @@
-# Sample Hardhat Project
+# Testing 1inch swaps
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This project demonstrates how to test 1inch swaps using ethers v6 in a basic Hardhat project.
 
-Try running some of the following tasks:
+The main file, 1inchSwap.js, will do the following:
+- Move WETH from a large holder to a local wallet
+- Approve WETH for the 1inch v6 router
+- Swap WETH for USDC through the 1inch v6 router
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
+npm install
+npx hardhat node --fork <mainnet_rpc_url>
+npx hardhat run scripts/1inchSwap.js --network localhost
 ```

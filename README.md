@@ -17,7 +17,7 @@ Install the project
 npm install
 ```
 
-Run a local fork of Mainnet from your terminal (if needed, pick a free RPC from [chainlist.org](http://www.chainlist.org))
+Run a local fork of Mainnet from your terminal (if needed, pick a free RPC from [chainlist.org](https://chainlist.org/chain/1))
 ```shell
 npx hardhat node --fork <mainnet_rpc_url>
 ```

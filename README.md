@@ -17,7 +17,7 @@ Install the project
 npm install
 ```
 
-Run a local fork of Mainnet from your terminal (Infura or Alchemy are good RPC options)
+Run a local fork of Mainnet from your terminal (if needed, pick a free RPC from chainlist.org)
 ```shell
 npx hardhat node --fork <mainnet_rpc_url>
 ```

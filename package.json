@@ -2,9 +2,9 @@
   "name": "hardhat-project",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.10"
+    "hardhat": "^2.22.18"
   },
   "dependencies": {
-    "ethers": "^6.13.2"
+    "ethers": "^6.13.5"
   }
 }
